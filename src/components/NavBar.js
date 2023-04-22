@@ -30,13 +30,13 @@ function NavBar() {
           </div>
           <div className="hidden ml-6 sm:flex">
             <div className="flex space-x-6">
-              <Link to={"Apiarys"} k>
+              <Link to={"apiarys"}>
                 <button className="bg-yellow-600 text-black hover:bg-yellow-500 px-3 py-2 rounded-md text-lg font-medium no-underline">
                   Apiary's
                 </button>
               </Link>
 
-              <Link to={"QRScan"}>
+              <Link to={"qrscan"}>
                 <button className="bg-yellow-600 text-black hover:bg-yellow-500 px-3 py-2 rounded-md text-lg font-medium no-underline">
                   QR Scan
                 </button>
