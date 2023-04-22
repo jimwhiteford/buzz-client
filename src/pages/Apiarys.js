@@ -12,7 +12,7 @@ export default function Apiarys() {
 
   useEffect(() => {
     axios
-      .get(`/getApiarys/${user}`)
+      .get(`http://localhost:3001/getApiarys/${user}`)
       .then((response) => {
         setApiarys(response.data);
       })
