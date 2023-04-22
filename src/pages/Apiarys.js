@@ -3,6 +3,7 @@ import ApiaryCard from "../components/ApiaryCard";
 import SaveCard from "../components/SaveCard";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import { URL } from "../App";
 
 const cookies = new Cookies();
 const user = cookies.get("EMAIL");
@@ -12,7 +13,7 @@ export default function Apiarys() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/getApiarys/${user}`)
+      .get(`${URL}/getApiarys/${user}`)
       .then((response) => {
         setApiarys(response.data);
       })
