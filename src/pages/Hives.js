@@ -4,6 +4,7 @@ import HiveCard from "../components/HiveCard";
 import SaveCard from "../components/SaveCard";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import { URL } from "../App";
 
 const cookies = new Cookies();
 const user = cookies.get("EMAIL");
@@ -15,7 +16,7 @@ export default function Apiarys() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/getHives/${slug}/${user}`)
+      .get(`${URL}/getHives/${slug}/${user}`)
       .then((response) => {
         setApiarys(response.data);
       })

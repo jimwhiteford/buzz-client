@@ -4,6 +4,7 @@ import HiveDetail from "../components/HiveDetail";
 import AddCard from "../components/AddCard";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import { URL } from "../App";
 
 const cookies = new Cookies();
 const user = cookies.get("EMAIL");
@@ -18,7 +19,7 @@ export default function Apiarys() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/getHive/${apiary}/${slug}/${user}`)
+      .get(`${URL}/getHive/${apiary}/${slug}/${user}`)
       .then((response) => {
         setHive(response.data);
       })
@@ -29,7 +30,7 @@ export default function Apiarys() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/getHiveTypes")
+      .get(`${URL}/getHiveTypes`)
       .then((response) => {
         setHiveType(response.data);
       })
@@ -40,7 +41,7 @@ export default function Apiarys() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/getBreeds")
+      .get(`${URL}/getBreeds`)
       .then((response) => {
         setBreed(response.data);
       })

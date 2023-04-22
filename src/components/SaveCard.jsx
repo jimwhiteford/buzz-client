@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import FileBase64 from "react-file-base64";
 import stockApiary from "../stockapiary.jpg";
 import stockHive from "../beehive.jpg";
+import { URL } from "../App";
 
 const SaveCard = (props) => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const SaveCard = (props) => {
   const sendContent = () => {
     const slugTemp = title.replace(/\s+/g, "-").toLowerCase();
     axios
-      .post("http://localhost:3001/createApiary", {
+      .post(`${URL}/createApiary`, {
         user: props.user,
         title: title,
         slug: slugTemp,
@@ -31,7 +32,7 @@ const SaveCard = (props) => {
   const sendHiveContent = () => {
     const slugTemp = title.replace(/\s+/g, "-").toLowerCase();
     axios
-      .post("http://localhost:3001/createHive", {
+      .post(`${URL}/createHive`, {
         user: props.user,
         apiary: props.slug,
         title: title,

@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import QRCode from "qrcode";
+import { URL } from "../App";
 
 const HiveCard = ({ post }) => {
   const [qr, setQr] = useState("");
@@ -13,7 +14,7 @@ const HiveCard = ({ post }) => {
 
   const deleteHive = () => {
     axios
-      .delete(`http://localhost:3001/deleteHive/${post._id}`)
+      .delete(`${URL}/deleteHive/${post._id}`)
       .then((res) => {
         console.log("Hive successfully deleted!");
         navigate(0);

@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import { URL } from "../App";
 const cookies = new Cookies();
 
 export default function Login() {
@@ -13,7 +14,7 @@ export default function Login() {
     // e.preventDefault();
     const configuration = {
       method: "post",
-      url: "http://localhost:3001/login",
+      url: `${URL}/login`,
       data: {
         email,
         password,

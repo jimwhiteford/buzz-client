@@ -3,12 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { URL } from "../App";
 
 const ApiaryCard = ({ post }) => {
   const navigate = useNavigate();
   const deleteHive = () => {
     axios
-      .delete(`http://localhost:3001/deleteApiary/${post._id}`)
+      .delete(`${URL}/deleteApiary/${post._id}`)
       .then((res) => {
         console.log("Hive successfully deleted!");
         navigate(0);

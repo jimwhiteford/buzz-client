@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 const token = cookies.get("TOKEN");
@@ -10,14 +10,14 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+  const navigate = useNavigate();
   const logout = () => {
     cookies.remove("TOKEN", { path: "/" });
-    window.location.href = "/";
+    navigate("/");
   };
 
   const login = () => {
-    console.log("should nav to /login");
-    window.location.href = "/login";
+    navigate("/login");
   };
   return (
     <Menu as="div" className="relative inline-block text-left">

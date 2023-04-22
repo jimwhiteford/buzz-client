@@ -1,22 +1,21 @@
 import React from "react";
-// import axios from "axios";
-// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import logo from "../honeyLogo.png";
 import Menu from "../components/Menu";
 import { Link } from "react-router-dom";
 const cookies = new Cookies();
-
 const token = cookies.get("TOKEN");
 
 function NavBar() {
+  const navigate = useNavigate();
   const logout = () => {
     cookies.remove("TOKEN", { path: "/" });
     window.location.href = "/";
   };
 
   const login = () => {
-    window.location.href = "/login";
+    navigate("/login");
   };
 
   return (

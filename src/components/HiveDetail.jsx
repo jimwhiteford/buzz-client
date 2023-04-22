@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from "react";
 import axios from "axios";
+import { URL } from "../App";
 
 const HiveDetail = (props) => {
   const [hiveType, setHiveType] = useState("");
@@ -38,7 +39,7 @@ const HiveDetail = (props) => {
 
   const save = () => {
     axios
-      .put(`http://localhost:3001/updateHive/${props.hive._id}`, {
+      .put(`${URL}/updateHive/${props.hive._id}`, {
         //user: props.user,
         // apiary: props.slug,
         // title: title,

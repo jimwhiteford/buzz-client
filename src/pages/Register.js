@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import axios from "axios";
+import { URL } from "../App";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -11,7 +12,7 @@ export default function Register() {
     e.preventDefault();
     const configuration = {
       method: "post",
-      url: "http://localhost:3001/register",
+      url: `${URL}/register`,
 
       data: {
         email,
