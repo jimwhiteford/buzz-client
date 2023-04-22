@@ -2,7 +2,7 @@ import { React } from "react";
 import QRScanCard from "../components/QRScanCard";
 import AddCard from "../components/AddCard";
 
-export default function Apiarys() {
+export default function Qr() {
   return (
     <div className="container mx-auto px-10 mb-8 mt-8">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 text-black">
